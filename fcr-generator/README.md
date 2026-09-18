@@ -9,7 +9,7 @@ winget install --id=astral-sh.uv  -e
 
 ## 使用
 1. 将检测结果的数据库/结构化表格下载到根目录下，以下假设该数据库名称为```inspection_report_xxx.xlsx```
-1. 确保[FCR报告模板](fcr-generator\fcr_template.xlsx)或其他模板也在根目录下
+1. 确保[FCR报告模板](fcr-generator/fcr_template.xlsx)或其他模板也在根目录下
 1. 运行以下代码
 ```bash
 # 如果用的是默认FCR模板
