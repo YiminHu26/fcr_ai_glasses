@@ -26,6 +26,7 @@
 ### 【灵珠】工作流
 - 在【灵珠】-```资源库```-```创建```-```工作流```
 - 参考[工作流的元素](rizon-workflow-elements)
+![工作流](rizon-workflow-elements/rizon-workflow-overview.png)
 - 建议可以一步步建立这个工作流
     - 第一步：工作流1-扫码后输出设备信息
         - 重点：插件，拍照，输入节点关键词判断，JSON字符串转换
