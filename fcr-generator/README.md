@@ -8,7 +8,9 @@ winget install --id=astral-sh.uv  -e
 ```
 
 ## 使用
-1. 将检测结果的数据库/结构化表格下载到根目录下，以下假设该数据库名称为```inspection_report_xxx.xlsx```
+1. 将检测结果的数据库/结构化表格下载到根目录下
+    - 每个运输单元应该只保留一次全过程的检测结果，重复/多余的结果应删除（比如由于检测中断重新开始检测）
+    - 以下假设该数据库名称为```inspection_report_xxx.xlsx```
 1. 确保[FCR报告模板](fcr-generator/fcr_template.xlsx)或其他模板也在根目录下
 1. 运行以下代码
 ```bash
@@ -27,4 +29,4 @@ uv run fcr-generator inspection_report_706271_D01_mock.xlsx
 ```
 
 ## 问题
-- 好像现在左上角的logo没有复制进新报告中
+- 好像现在左上角的logo没有复制进新报告中，暂时的解决方法是打开[```fcr_template.xlsx```](fcr_template.xlsx)把左上角的logo手动复制过来。
