@@ -332,3 +332,10 @@ To gitee.com:yiminhu26/fcr_ai_glasses_1.git
 ![image.png](gitee_pr_2.png)
 ![image.png](gitee_pr_3.png)
 ![image.png](gitee_pr_4.png)
+
+6. Pull Request被审核同意后即可被合并, 这时可以删除当前本地仓库的分支dev_new_note
+```powershell
+git branch -d dev_new_note
+```
+
+**中途如果出现任何文件不统一,提交失败的问题可以直接在vscode里问ai**
