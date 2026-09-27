@@ -244,7 +244,7 @@ git clone git@github.com:Username/ros2_tutorial.git
 
 ### 例子
 从Gitee上fork yiminhu26/fcr_ai_glasses仓库,完成改动后提交PR给原仓库
-1. 从Gitee上fork原仓库,这里命名为fcr_ai_glasses_1
+1. 从Gitee上fork原仓库,这里命名为fcr_ai_glasses_**1**
 ![image.png](gitee_fork_1.png)
 2. 克隆到本地
 ![image.png](gitee_fork_2.png)
@@ -277,23 +277,58 @@ git switch -c dev_new_note
 ```
 这里*表示目前所在分支
 
-4. 完成改动后提交到本地仓库
+4. 把原仓库添加到upstream分支
 ```powershell
+git remote add upstream git@gitee.com:yiminhu26/fcr_ai_glasses.git
+#                                                             ↑这里没有"_1", 是原仓库
+```
+5. 完成改动后提交到本地仓库
+```powershell
+# 建议先fetch和merge一下原仓库的原分支
+# fetch拉取远程更新(不自动合并)
+git fetch upstream main
+# 选择要合并的本地分支(即远程的upstream/main要合并到我本地的dev_new_note分支上)
+git checkout dev_new_note
+# 合并改变
+git merge upstream/main
+# 然后再把本地的改变提交到本地仓库
 git add .
-git commit -m "XXXXX"
+git commit -m "Updated note for git"
 ```
 
 收到的回复如下:
 ```
-
+[dev_new_note 5bf0334] Updated note for git
+ 12 files changed, 299 insertions(+)
+ create mode 100644 resources/git_note/README.md
+ create mode 100644 resources/git_note/gitee_fork_1.png
+ ...
 ```
 
 4. 提交到远程仓库
 ```powershell
-git push origin main
+git push origin dev_new_note
 ```
+注意这里的```dev_new_note```指的是要提交的分支,如果错写成```main```则不会有内容被提交,因为```main```分支没有新的内容
 
 收到的回复如下:
 ```
-
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (16/16), 2.54 MiB | 7.83 MiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Powered by GITEE.COM [1.1.23]
+remote: Set trace flag 4b4649b2
+remote: Create a pull request for 'dev_new_note' on Gitee by visiting:
+remote: https://gitee.com/yiminhu26/fcr_ai_glasses_1/pull/new/yiminhu26:dev_new_note...yiminhu26:main
+To gitee.com:yiminhu26/fcr_ai_glasses_1.git
+ * [new branch]      dev_new_note -> dev_new_note
 ```
+
+5. 提交Pull Request
+![image.png](gitee_pr_1.png)
+![image.png](gitee_pr_2.png)
+![image.png](gitee_pr_3.png)
+![image.png](gitee_pr_4.png)
