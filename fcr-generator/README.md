@@ -1,5 +1,6 @@
 # 自动生成FCR脚本
 将结构化存储的检测结果转化为终检报告(FCR)
+![demo](demo.gif)
 
 ## 设置
 1. 阅读[教程](https://docs.astral.sh/uv/getting-started/installation/),下载uv,这里我用winget方法
@@ -27,6 +28,3 @@ uv run fcr-generator –o FCR_70xxxx_D01.xlsx --template fcr_xxx_template.xlsx i
 ```bash
 uv run fcr-generator inspection_report_706271_D01_mock.xlsx
 ```
-
-## 问题
-- 好像现在左上角的logo没有复制进新报告中，暂时的解决方法是打开[```fcr_template.xlsx```](fcr_template.xlsx)把左上角的logo手动复制过来。
